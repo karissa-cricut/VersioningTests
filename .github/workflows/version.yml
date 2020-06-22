@@ -4,14 +4,15 @@ name: Bump version
 on:
   push:
     branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@develop
+    - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
     - name: Bump version and push tag
